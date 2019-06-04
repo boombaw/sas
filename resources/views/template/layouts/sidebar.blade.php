@@ -4,7 +4,7 @@
             <ul id="mainnav-menu" class="list-group">
                 @foreach ($menuHeader as $header)
                     <!--Category name-->
-                    <li class="list-header">{{ ucfirst(substr($header->menu_name, 10, strlen($header->menu_name)))}}</li>    
+                    <li class="list-header">@lang('site.'.$header->menu_name)</li>    
     
                     @php
                         $hasChild = \App\Menu::where('menu_parent', $header->menu_id)->get()->count();
@@ -12,14 +12,14 @@
         
                     @if ($hasChild == 0 )
                         <!--Menu list item-->
-                        <li> <a href="{{ $header->menu_link }}"> <i class="fa fa-home"></i> <span class="menu-title"> {{ ucfirst(substr($header->menu_name, 10, strlen($header->menu_name)))}} </span> </a> </li>
+                        <li> <a href="{{ $header->menu_link }}"> <i class="fa fa-home"></i> <span class="menu-title"> @lang('site.'.$header->menu_name) </span> </a> </li>
                     @else
                         <!--Menu list item-->
                         <li>
                             <a href="#">
                                 <i class="{{ $header->menu_icon }}"></i>
                                 <span class="menu-title">
-                                    {{ ucfirst(substr($header->menu_name, 10, strlen($header->menu_name)))}}
+                                    @lang('site.'.$header->menu_name)
                                 </span>
                                 <i class="arrow"></i>
                             </a>
@@ -27,7 +27,7 @@
                             <ul class="collapse">
                                 @foreach ($menuChild as $child)
                                     @if ($child->menu_parent == $header->menu_id)
-                                        <li><a href="{{ $child->menu_link }}"><i class="fa fa-circle-thin"></i> {{ ucfirst(substr($child->menu_name, 10, strlen($child->menu_name)))}} </a></li>
+                                        <li><a href="{{ $child->menu_link }}"><i class="fa fa-circle-thin"></i> @lang('site.'.$child->menu_name) </a></li>
                                     @endif
                                 @endforeach
                             </ul>
