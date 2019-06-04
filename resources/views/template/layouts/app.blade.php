@@ -302,7 +302,7 @@
                     <div id="mainnav">
                         <!--Menu-->
                         <!--================================-->
-                        @include('admin.template.layouts.sidebar', ['menu'])
+                        @include('template.layouts.sidebar')
                         <!--================================-->
                         <!--End menu-->
                     </div>

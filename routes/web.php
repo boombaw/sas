@@ -22,4 +22,4 @@ Route::prefix('admin')->group(function () {
     Route::get('organization', 'OrgController@index');
 });
 
-Route::view('login', 'admin.template.pages.login');
+Route::view('login', 'template.pages.login');
