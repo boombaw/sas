@@ -16,6 +16,10 @@ Route::get('/', function () {
 });
 
 
-Route::get('/admin', 'DashboardController@index');
+Route::prefix('admin')->group(function () {
+    Route::get('dashboard', 'DashboardController@index');
+    Route::get('general', 'GeneralSettingController@index');
+    Route::get('organization', 'OrgController@index');
+});
 
 Route::view('login', 'admin.template.pages.login');
