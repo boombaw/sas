@@ -265,12 +265,12 @@
                 <!--===================================================-->
                 <div id="content-container">
                     <div class="pageheader hidden-xs">
-                      <h3><i class="fa fa-home"></i> Dashboard </h3>
+                      <h3><i class="fa fa-home"></i> @yield('title') </h3>
                         <div class="breadcrumb-wrapper">
                           <span class="label">You are here:</span>
                              <ol class="breadcrumb">
                                 <li> <a href="#"> Home </a> </li>
-                                <li class="active"> Dashboard </li>
+                                <li class="active"> @yield('title') </li>
                              </ol>
                         </div>
                     </div>
@@ -291,7 +291,7 @@
                     <!--================================-->
                     <div class="navbar-header">
                         <a href="index.html" class="navbar-brand">
-                            <i class="fa fa-forumbee brand-icon"></i>
+                            <i class="fa fa-connectdevelop brand-icon"></i>
                             <div class="brand-title">
                                 <span class="brand-text">SAS</span>
                             </div>
